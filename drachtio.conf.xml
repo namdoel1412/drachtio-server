@@ -81,11 +81,11 @@
     -->
 
     <!-- comment this in and edit http url to use outbound connections
-         Note: currently only HTTP GET is supported as an HTTP METHOD
+         Note: currently only HTTP GET is supported as an HTTP METHOD -->
     <request-handlers>
-        <request-handler sip-method="INVITE" http-method="GET">http://35.187.89.96:80</request-handler>
+        <request-handler sip-method="INVITE" http-method="GET">http://sbc-outbound:4000</request-handler>
     </request-handlers>
-    -->
+   
     <!-- sip configuration -->
     <sip>
         <contacts>

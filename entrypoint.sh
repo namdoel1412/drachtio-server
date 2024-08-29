@@ -70,7 +70,7 @@ if [ "$1" = 'drachtio' ]; then
   if [[ -n "$PUBLIC_IP" && -n "$WSS_PORT" ]]; then
     MYARGS+=("--contact")
     MYARGS+=("sips:${LOCAL_IP}:$WSS_PORT;transport=wss")
-    if [[ "$CLOUD" == "digitalocean" ]]; then
+    if [[ "$CLOUD" == "digitalocean" || "$CLOUD" == "none" ]]; then
       MYARGS+=("--contact")
       MYARGS+=("sip:${PUBLIC_IP}:$WSS_PORT;transport=udp,tcp")
     else
@@ -82,7 +82,7 @@ if [ "$1" = 'drachtio' ]; then
   if [[ -n "$PUBLIC_IP" && -n "$TLS_PORT" ]]; then
     MYARGS+=("--contact")
     MYARGS+=("sips:${LOCAL_IP}:$TLS_PORT;transport=tls")
-    if [[ "$CLOUD" == "digitalocean" ]]; then
+    if [[ "$CLOUD" == "digitalocean" || "$CLOUD" == "none" ]]; then
       MYARGS+=("--contact")
       MYARGS+=("sip:${PUBLIC_IP}:$TLS_PORT;transport=tls")
     else

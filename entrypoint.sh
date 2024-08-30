@@ -46,9 +46,12 @@ if [ "$1" = 'drachtio' ]; then
       MYARGS+=("--contact")
       MYARGS+=("sip:${LOCAL_IP}:${DRACHTIO_SIP_PORT:-5060};transport=udp,tcp")
       if [ -n "$PUBLIC_IP" ]; then
-        if [[ "$CLOUD" == "digitalocean" || "$CLOUD" == "none" ]]; then
+        if [[ "$CLOUD" == "digitalocean"]]; then
           MYARGS+=("--contact")
           MYARGS+=("sip:${PUBLIC_IP}:${DRACHTIO_SIP_PORT:-5060};transport=udp,tcp")
+        elif [[ "$CLOUD" == "none" ]]; then
+          MYARGS+=("--external-ip")
+          MYARGS+=("${PUBLIC_IP}")
         else
           MYARGS+=("--external-ip")
           MYARGS+=("${PUBLIC_IP}")
@@ -72,9 +75,12 @@ if [ "$1" = 'drachtio' ]; then
   if [[ -n "$PUBLIC_IP" && -n "$WSS_PORT" ]]; then
     MYARGS+=("--contact")
     MYARGS+=("sips:${LOCAL_IP}:$WSS_PORT;transport=wss")
-    if [[ "$CLOUD" == "digitalocean" || "$CLOUD" == "none" ]]; then
+    if [[ "$CLOUD" == "digitalocean"]]; then
       MYARGS+=("--contact")
       MYARGS+=("sip:${PUBLIC_IP}:$WSS_PORT;transport=udp,tcp")
+    elif [[ "$CLOUD" == "none" ]]; then
+      MYARGS+=("--external-ip")
+      MYARGS+=("${PUBLIC_IP}")
     else
       MYARGS+=("--external-ip")
       MYARGS+=("${PUBLIC_IP}")
@@ -87,6 +93,9 @@ if [ "$1" = 'drachtio' ]; then
     if [[ "$CLOUD" == "digitalocean" || "$CLOUD" == "none" ]]; then
       MYARGS+=("--contact")
       MYARGS+=("sip:${PUBLIC_IP}:$TLS_PORT;transport=tls")
+    elif [[ "$CLOUD" == "none" ]]; then
+      MYARGS+=("--external-ip")
+      MYARGS+=("${PUBLIC_IP}")
     else
       MYARGS+=("--external-ip")
       MYARGS+=("${PUBLIC_IP}")

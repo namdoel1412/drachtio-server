@@ -34,6 +34,9 @@ db:
   # if true, create the db subchart
   enabled: true
   mysql: 
+    config: |
+      [mysqld]
+      bind-address = 0.0.0.0
     secret: amFtYm9uZXM=
 monitoring: 
   # if true, create the monitoring subchart

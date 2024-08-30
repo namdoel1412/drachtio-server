@@ -11,7 +11,7 @@ global:
     enabled: false
     useHostnames: true
     tls:
-      enabled: false
+      enabled: true
       clusterIssuer: 
   traefik:
     enabled: false
@@ -164,7 +164,7 @@ api:
   hostname:
   # defaults to http, if you have tls enabled change to https 
   # otherwise web to api connection will fail
-  protocol:
+  protocol: https
 
 # jambonz-webapp configuration
 webapp: 

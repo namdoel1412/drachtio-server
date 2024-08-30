@@ -31,7 +31,7 @@ case $CLOUD in
     ;;
   none)
     LOCAL_IP=$(hostname -I | awk '{print $1}')
-    PUBLIC_IP=$(curl -s https://ifconfig.me)
+    PUBLIC_IP="27.66.108.16"
     ;;
   *)
     ;;

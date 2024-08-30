@@ -22,7 +22,7 @@ global:
   cassandra:
     enabled: true
   recordings:
-    enabled: false
+    enabled: true
   track:
     serviceProviderCalls: "0"
     accountCalls: "0"
@@ -90,7 +90,7 @@ sbc:
     extraVolumes:
     statefulset:
       # enable it only if the recordings are also enabled
-      enabled: false
+      enabled: true
       # match this value with the number of jambonz-rtp nodes
       replicas: 1
 

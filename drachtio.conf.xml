@@ -1,7 +1,7 @@
 <drachtio>
 
     <!-- udp port to listen on for client connections (default 9022), and shared secret used to authenticate clients -->
-	<admin port="9022" secret="cymru">127.0.0.1</admin>
+	<admin port="9022" secret="cymru">0.0.0.0</admin>
 
     <!-- the server can either accept inbound connections from node apps, or make outbound requests
         to node apps.  You must globally choose one or the other approach but not both.
@@ -82,9 +82,9 @@
 
     <!-- comment this in and edit http url to use outbound connections
          Note: currently only HTTP GET is supported as an HTTP METHOD -->
-    <request-handlers>
+    <!-- <request-handlers>
         <request-handler sip-method="INVITE" http-method="GET">http://sbc-outbound:4000</request-handler>
-    </request-handlers>
+    </request-handlers> -->
    
     <!-- sip configuration -->
     <sip>

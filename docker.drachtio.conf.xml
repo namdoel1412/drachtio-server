@@ -2,9 +2,9 @@
 
     <!-- udp port to listen on for client connections (default 8022), and shared secret used to authenticate clients -->
     <admin port="9022" secret="cymru">0.0.0.0</admin>
-    <!-- <request-handlers>
+    <request-handlers>
         <request-handler sip-method="INVITE" http-method="GET">http://sbc-outbound:4000</request-handler>
-    </request-handlers> -->
+    </request-handlers>
     <!-- sip configuration -->
     
     <sip>

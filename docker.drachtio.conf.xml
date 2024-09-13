@@ -17,7 +17,7 @@
         -->
         <contact>sip:*;transport=udp,tcp</contact>
         <contact>sip:*:80;transport=ws</contact>
-        <contact>sips:*;transport=tls</contact>
+        <contact>sips:*:5061;transport=tls</contact>
         <contact>sips:*:443;transport=wss</contact>
 
 

@@ -74,7 +74,7 @@ sbc:
     toleration: sip
     podAnnotations:
     ssl:
-      enabled: true
+      enabled: false
   rtp: 
     nodeSelector: 
       label: voip-environment 

@@ -14,7 +14,7 @@ spec:
   # At least one of a DNS Name, URI, or IP address is required.
   dnsNames:
     - cpaas62.epacific.net # Change this with your domain name
-    - www.cpaas62.epacific.net # Change this with your domain name
+    # - www.cpaas62.epacific.net # Change this with your domain name
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer

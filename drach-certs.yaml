@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: drachtio-certificate
+  namespace: jambonz
+spec:
+  # Secret names are always required.
+  secretName: drachtio-certs
+  # duration: 2160h # 90d
+  # renewBefore: 360h # 15d
+  usages:
+    - server auth
+    - client auth
+  # At least one of a DNS Name, URI, or IP address is required.
+  dnsNames:
+    - cpaas62.epacific.net # Change this with your domain name
+    - www.cpaas62.epacific.net # Change this with your domain name
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer

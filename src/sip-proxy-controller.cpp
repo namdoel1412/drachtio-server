@@ -1054,6 +1054,7 @@ namespace drachtio {
     }
 
     int ProxyCore::startRequests() {
+
         
         if( !m_searching ) {
             DR_LOG(log_debug) << "startRequests: Proxy is completed so not starting any new requests"; 
